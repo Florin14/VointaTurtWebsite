@@ -1,0 +1,20 @@
+@import "../../assets/scss/variables.scss";
+
+.news-card-container {
+    background-color: $black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 2rem;
+    grid-column: span 2;
+    grid-row: span 1;
+    border-radius: 20px;
+    // grid-row: span 2;    
+}
+
+@media(max-width: 991px) {
+    .news-card-container {
+        width: 100%;
+    }
+  }

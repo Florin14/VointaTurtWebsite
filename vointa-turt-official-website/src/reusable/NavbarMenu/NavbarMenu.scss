@@ -1,0 +1,227 @@
+.navbar-container {
+  width: 100%;
+  padding: 0 60px;
+  margin: 0 auto;
+  position: sticky;
+}
+
+img {
+  max-width: 100%;
+  height: 60px;
+}
+
+.navBar .logo img {
+  float: left;
+  max-height: 120px;
+}
+.is-active {
+  color: #F1FE28!important;
+}
+
+.navBar .col-md-3 {
+  z-index: 7;
+}
+ul.main-menu {
+  display: inline-flex;
+  list-style: none;
+  margin: 0px auto 0;
+  padding: 0;
+  float: right;
+  z-index: 7;
+}
+ul.main-menu>li.menu-item:first-child {
+  padding-left: 0;
+  margin-left: 0;
+}
+.menu-item {
+  line-height: 23px;
+}
+li {
+  list-style-type: none;
+}
+.menu-item a {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 40px;
+  position: relative;
+  display: block;
+  color: #fff;
+  margin: 27px 17px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.menu-item-underline::after {
+  content: "";
+  position: absolute;
+  background-color: #F1FE28;
+  height: 3px;
+  width: 0px;
+  left: 0px;
+  bottom: -2px;
+  transition: 0.3s; 
+}
+
+.menu-item-underline:hover::after {
+  width: 100%;
+}
+
+.header__middle__logo {
+  width: 25%;
+  display: flex;
+  float: left;
+  height: 100%;
+  align-items: center;
+}
+
+.logo-name {
+  color: #F1FE28;
+  text-decoration: none;
+  font-weight: 500;
+}
+ 
+.header__middle__menus {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  float: left;
+}
+.menu-item.menu__qqqitem a{
+  margin: 27px 10px;
+}
+.header__middle {
+  display: flex;
+  background: #000;
+  width: 100%;
+  float: left;
+  border-top: 4px solid#F1FE28;
+  border-bottom: 1px dashed lavender;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+.header__middle__logo > a > h1 {
+  color: #F1FE28;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-top: 33px;
+}
+.active{
+  color: #F1FE28!important;
+} 
+.header__middle__menus span.text {
+  position: absolute;
+  right: 177px;
+  bottom: 10px;
+  font-size: 14px;
+  color: #F1FE28;
+}
+.header__middle__facebook{
+  width: 25%;
+  color: #F1FE28;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+}
+.banner-icon {
+    color: #F1FE28;
+}
+.sub__menus__arrows{
+  position: relative;
+}
+.sub__menus__arrows svg, .sub__menus__arrows__full svg{
+  padding-top: 0px;
+  position: absolute;
+  top: 10px;
+}
+.sub__menus {
+  position: absolute;
+  display: none;
+  background: #000;
+  color: #fff;
+  border: 1px solid lavender;
+  width: 227px;
+  left: -17px;
+  padding: 2px 0 0 0;
+  z-index: 1000;
+  box-shadow: 0 10px 12px rgb(22 33 39 / 25%);
+}
+
+
+@media (max-width:767px) { 
+  .header__middle .active {color: #F1FE28!important;}
+}
+
+@media (min-width:992px) { 
+  .sub__menus__arrows:hover .sub__menus{
+    display: block;
+  }
+  .sub__menus__arrows__full:hover .sub__menus{
+    display: block;
+    z-index: 1000000;
+  }
+}
+.menu-item .sub__menus  a {
+  display: flex;
+  align-items: center;
+  padding: 7px 0 0px 0;
+  margin: 7px 27px;
+}
+.menu-item:hover > a{
+  color: #F1FE28 !important;
+}
+.menu-item .sub__menus li:hover a{
+  color: #F1FE28 !important;
+}
+
+.header__middle__logo img{
+  max-width: 207px;
+  margin: 20px 0 0 0;
+}
+
+
+@media(max-width:991px){
+.header__middle__logo {width: 70%;}
+.header__middle__menus {display: flex; width: 25%; justify-content: flex-end;}
+.header__middle__logo img {max-width: 197px;margin: 20px 0 0 0;}
+.main-nav .menubar__button:hover {background-color: #F1FE28;color: #000;}
+.main-nav .menu-item:hover > a {color: #F1FE28 !important}
+.main-nav .menubar__button {
+  display: block!important;
+  float: right;
+  background-color: #080808;
+  color: #F1FE28;
+  padding: 6px 7px;
+  border-radius: 5px;
+  margin: 27px auto 0;
+  cursor: pointer;
+  position: relative;
+  z-index: 10037;
+}
+.main-nav .menubar__button svg{font-size: 27px;}
+.main-nav ul.menuq2 {
+  display: block!important;
+  position: absolute;
+  left: 0;
+  z-index: 10007;
+  background-color: #000;
+  color: #fff;
+  border-bottom: 3px solid #F1FE28;
+  right: 0;
+  padding-bottom: 17px;
+  padding-top: 57px;
+}
+.main-nav .menu-item a {margin: 10px 17px;text-align: center;}
+.main-nav  ul.main-menu {display: none}
+.main-nav .sub__menus__arrows:hover .sub__menus {margin: 0 auto;left: 0;right: 0;}
+.sub__menus__Active{display: block!important;margin: 0 auto;left: 0;right: 0;}
+.sub__menus__Active2{display: block!important;}
+.menus__categorysss{display: none;}
+.menus__categorysss2{display: none;}
+.menu-item .sub__menus__full a {text-align: left;}
+.header__middle__facebook {display: none;}
+.navbar-container {padding: 0;}
+
+}
+
