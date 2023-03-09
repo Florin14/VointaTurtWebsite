@@ -12,6 +12,7 @@ import GalleryPage from "../pages/Gallery/GalleryPage";
 import LandingPage from "../pages/Landing/LandingPage";
 import { GoToTop } from "../reusable/GoToTop/GoToTop";
 import NotFoundPage from "../pages/NotFound/NotFoundPage";
+import CurrentSeasonPage from "../pages/Seasons/CurrentSeasonPage";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "/players",
         element: <PlayersPage />,
+      },
+      {
+        path: "/season/2022-2023",
+        element: <CurrentSeasonPage />,
       },
       {
         path: "*",

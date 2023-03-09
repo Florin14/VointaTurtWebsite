@@ -1,21 +1,24 @@
 import "./MatchCard.scss";
 import React from "react";
-import logoHomeTeam from "../../assets/logo1.png";
-import logoAwayTeam from "../../assets/stiintaBeltiug.png";
+import { translatedDate, translatedDays } from "../../data/data";
 
-export const MatchCard = () => {
+export const MatchCard = ({ result }) => {
+  const d = new Date(result.date);
+  console.log(d.getDate());
   return (
     <div className="match-card-container">
       <div className="match-card-content">
-        <img className="image-logo" src={logoHomeTeam} alt="logo" />
-        <span className="result-home">3 - 2</span>
-        <img className="image-logo" src={logoAwayTeam} alt="logo" />
+        <img className="image-logo" src={result.homeTeam.logo} alt="logo" />
+        <span className="result-home">{result.result}</span>
+        <img className="image-logo" src={result.awayTeam.logo} alt="logo" />
       </div>
       <div className="match-card-details">
-        <span className="match-card-details date">Dum, 27 Oct</span>
-        <span className="match-card-details stage">Etapa 11</span>
+        <span className="match-card-details date">
+          {translatedDays[d.getDay()].short}, {d.getDate()}{" "}
+          {translatedDate[d.getMonth()]}
+        </span>
+        <span className="match-card-details stage">Etapa {result.stage}</span>
       </div>
-
     </div>
   );
 };

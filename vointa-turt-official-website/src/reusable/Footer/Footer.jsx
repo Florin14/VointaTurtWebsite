@@ -1,6 +1,6 @@
 import "./Footer.scss";
 import React from "react";
-import logo from "../../assets/logo1.png";
+import logo from "../../assets/teams/vointaTurt.png";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import { NavLink } from "react-router-dom";
 

@@ -4,7 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import FormatAlignRightIcon from "@mui/icons-material/FormatAlignRight";
 import CancelIcon from "@mui/icons-material/Cancel";
-import logo from "../../assets/logo1.png";
+import logo from "../../assets/teams/vointaTurt.png";
 import FacebookIcon from "@mui/icons-material/Facebook";
 
 const NavbarMenu = () => {
@@ -97,7 +97,7 @@ const NavbarMenu = () => {
                       className="menu-item-underline"
                       onClick={toggleClass}
                       activeclassname="is-active"
-                      to={`/`}
+                      to={`/season/2022-2023`}
                     >
                       2022-2023
                     </NavLink>
