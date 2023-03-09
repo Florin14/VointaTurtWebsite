@@ -1,0 +1,59 @@
+@import "../../assets/scss/variables.scss";
+
+.not-found-container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 74px);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url('../../assets/404-notFound.png');
+}
+
+.not-found-content {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    background-color: $black;
+    opacity: 0.9;
+    color: $primary-color;
+    padding: 2rem;
+    gap: 2.5rem;
+    width: 100%;
+}
+
+.not-found-404message {
+    font-size: 5rem;
+    font-weight: 600;
+}
+
+.not-found-message {
+    font-size: 2rem;
+    font-weight: 500;
+    color: $primary-color;
+}
+
+.not-found-page-link-section {
+    display: flex;
+
+    .not-found-page-link {
+      display: flex;
+      align-items: center;
+      padding: .5rem 1rem;
+      border: 2px solid $white;
+      color: $white;
+      position: relative;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.3rem;
+      &:hover {
+        .arrowright-icon {
+            transition: .5s;
+            transform: translateX(10px);
+        }
+      }
+    }
+  }
