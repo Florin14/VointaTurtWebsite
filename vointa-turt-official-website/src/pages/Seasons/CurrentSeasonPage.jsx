@@ -1,6 +1,11 @@
 import "./CurrentSeasonPage.scss";
 import React, { useState } from "react";
-import { matches, results, seasonPageCategory, teams } from "../../data/data";
+import {
+  matches2022_2023,
+  results2022_2023,
+  seasonPageCategory,
+  teams,
+} from "../../data/data";
 import { styled, Tabs, Tab, css } from "@mui/material";
 import Title from "../../reusable/Title/Title";
 import { SeasonCard } from "../../reusable/Card/SeasonCard";
@@ -8,6 +13,7 @@ import { SeasonCard } from "../../reusable/Card/SeasonCard";
 const Ranking = () => {
   return (
     <div className="current-season-ranking-container">
+      <div className="competition"></div>
       <span className="current-season-league">Liga 4 Elite - SERIA A</span>
       <table className="current-season-ranking">
         <thead>
@@ -30,7 +36,9 @@ const Ranking = () => {
               return (
                 <tr
                   key={index}
-                  className={`${item.name === "Voința Turț" ? "my-team-ranking" : ""}`}
+                  className={`${
+                    item.name === "Voința Turț" ? "my-team-ranking" : ""
+                  }`}
                 >
                   <td className="position-ranking-column">{index + 1}.</td>
                   <td className="team-ranking-column">
@@ -62,7 +70,6 @@ const CurrentSeasonPage = () => {
   const [selectedCategory, setSelectedCategory] = useState(
     seasonPageCategory.CLASAMENT
   );
-  console.log(selectedCategory);
 
   const handleCategorySelection = (_event, newSelectedCategory) => {
     setSelectedCategory(newSelectedCategory);
@@ -70,7 +77,7 @@ const CurrentSeasonPage = () => {
 
   const renderMatches = (entities, categoryIndex) => {
     if (entities?.length && categoryIndex === selectedCategory) {
-      return (
+      return entities?.length != 0 ? (
         <Cards key={categoryIndex} role="tabpanel">
           {entities.map((match) => (
             <SeasonCard
@@ -79,22 +86,21 @@ const CurrentSeasonPage = () => {
               title={match.title}
               description={match.description}
               price={match.price}
+              homeTeamId={match.homeTeamId}
+              awayTeamId={match.awayTeamId}
+              matches={entities}
             />
           ))}
         </Cards>
+      ) : (
+        <p>Nu exista niciun meci momentan</p>
       );
     }
 
-    // if (categoryIndex === selectedCategory) {
-    //   return (
-    //     <EmptyAnnouncementsText key={categoryIndex} variant="body1">
-    //       No announcements here yet
-    //     </EmptyAnnouncementsText>
-    //   )
-    // }
-
     return null;
   };
+
+  const isRankingTab = selectedCategory === seasonPageCategory.CLASAMENT;
 
   return (
     <div className="current-season-page-container">
@@ -109,8 +115,9 @@ const CurrentSeasonPage = () => {
       <Tabs
         value={selectedCategory}
         onChange={handleCategorySelection}
-        indicatorColor="secondary"
         sx={{ backgroundColor: "#000", borderRadius: "10px", color: "#f1fe28" }}
+        centered
+        aria-label="simple tabs example"
       >
         <StyledTab
           label="Clasament"
@@ -126,8 +133,8 @@ const CurrentSeasonPage = () => {
           aria-selected={seasonPageCategory.MECIURI === selectedCategory}
         />
       </Tabs>
-      {[[], results, matches].map(renderMatches)}
-      {selectedCategory === seasonPageCategory.CLASAMENT && <Ranking />}
+      {[[], results2022_2023, matches2022_2023].map(renderMatches)}
+      {isRankingTab && <Ranking />}
     </div>
   );
 };

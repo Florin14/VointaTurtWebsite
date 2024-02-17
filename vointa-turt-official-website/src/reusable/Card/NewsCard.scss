@@ -2,6 +2,8 @@
 
 .news-card-container {    
     display: flex;
+    width: 100%;
+    height: 100%;
     flex-flow: column wrap;
     background-color: rgb(247, 247, 247);    
     font-size: 2rem;
@@ -67,5 +69,12 @@
 @media(max-width: 991px) {
     .news-card-container {
         width: 100%;
+    }
+}
+
+@media(max-width: 780px) {
+    .news-card-container {
+        grid-column: unset;
+        grid-row: unset;
     }
 }

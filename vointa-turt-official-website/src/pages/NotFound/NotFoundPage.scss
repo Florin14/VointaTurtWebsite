@@ -35,25 +35,3 @@
     font-weight: 500;
     color: $primary-color;
 }
-
-.not-found-page-link-section {
-    display: flex;
-
-    .not-found-page-link {
-      display: flex;
-      align-items: center;
-      padding: .5rem 1rem;
-      border: 2px solid $white;
-      color: $white;
-      position: relative;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.3rem;
-      &:hover {
-        .arrowright-icon {
-            transition: .5s;
-            transform: translateX(10px);
-        }
-      }
-    }
-  }

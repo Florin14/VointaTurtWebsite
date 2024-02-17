@@ -4,7 +4,6 @@ import { translatedDate, translatedDays } from "../../data/data";
 
 export const MatchCard = ({ result }) => {
   const d = new Date(result.date);
-  console.log(d.getDate());
   return (
     <div className="match-card-container">
       <div className="match-card-content">

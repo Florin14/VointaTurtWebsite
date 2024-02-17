@@ -2,7 +2,7 @@ import React from "react";
 import background1 from "../../assets/background1.jpg";
 import background2 from "../../assets/background2.jpg";
 import background3 from "../../assets/background3.jpg";
-import background4 from "../../assets/background4.jpg"
+import background4 from "../../assets/background4.jpg";
 import HeroSlider, { Slide } from "hero-slider";
 
 export const BasicSlider = () => {

@@ -1,0 +1,22 @@
+@import "../../assets/scss/variables.scss";
+
+.button-link-section {
+    display: flex;
+    .button-link {
+      display: flex;
+      align-items: center;
+      padding: .5rem 1rem;
+      border: 2px solid $white;
+      color: $white;
+      position: relative;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.3rem;
+      &:hover {
+        .arrowright-icon {
+            transition: .5s;
+            transform: translateX(10px);
+        }
+      }
+    }
+}
