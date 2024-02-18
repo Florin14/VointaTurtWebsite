@@ -8,6 +8,6 @@ Stay tuned as we continue to enhance the site, bringing you closer to the exciti
 
 Steps to run app:
 1. npm install
-2. yarn run dev
+2. yarn run dev / npm run dev
    
 #ReactJs #Sass
