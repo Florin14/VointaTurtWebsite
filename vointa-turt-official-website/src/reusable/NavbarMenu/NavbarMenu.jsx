@@ -24,16 +24,28 @@ const NavbarMenu = () => {
   }
 
   const [isMenuSubMenu, setMenuSubMenu] = useState(false);
+  const [isMenuSubMenu2, setMenuSubMenu2] = useState(false);
 
-  const toggleSubmenu = () => {
+  const toggleSubmenu1 = () => {
     setMenuSubMenu(isMenuSubMenu === false ? true : false);
   };
 
+  const toggleSubmenu2 = () => {
+    setMenuSubMenu2(isMenuSubMenu2 === false ? true : false);
+  };
+
   let boxClassSubMenu = ["sub__menus"];
-  if (isMenuSubMenu) {
-    boxClassSubMenu.push("sub__menus__Active");
+  let boxClassSubMenu2 = ["sub__menus"];
+  if (isMenuSubMenu || isMenuSubMenu2) {
+    if (isMenuSubMenu) {
+      boxClassSubMenu.push("sub__menus__Active");
+    }
+    if (isMenuSubMenu2) {
+      boxClassSubMenu2.push("sub__menus__Active");
+    }
   } else {
     boxClassSubMenu.push("");
+    boxClassSubMenu2.push("");
   }
 
   return (
@@ -85,13 +97,23 @@ const NavbarMenu = () => {
                 </NavLink>
               </li>
               <li
-                onClick={toggleSubmenu}
+                onClick={toggleSubmenu1}
                 className="menu-item sub__menus__arrows"
               >
                 <Link to="#">
                   Sezon <KeyboardArrowDownIcon />
                 </Link>
                 <ul className={boxClassSubMenu.join(" ")}>
+                  <li>
+                    <NavLink
+                      className="menu-item-underline"
+                      onClick={toggleClass}
+                      activeclassname="is-active"
+                      to={`/season/2023-2024`}
+                    >
+                      Sezon curent
+                    </NavLink>
+                  </li>
                   <li>
                     <NavLink
                       className="menu-item-underline"
@@ -107,7 +129,7 @@ const NavbarMenu = () => {
                       className="menu-item-underline"
                       onClick={toggleClass}
                       activeclassname="is-active"
-                      to={`/`}
+                      to={`/season/2021-2022`}
                     >
                       2021-2022
                     </NavLink>
@@ -135,13 +157,13 @@ const NavbarMenu = () => {
                 </NavLink>
               </li>
               <li
-                onClick={toggleSubmenu}
+                onClick={toggleSubmenu2}
                 className="menu-item sub__menus__arrows"
               >
                 <Link to="#">
                   Club <KeyboardArrowDownIcon />
                 </Link>
-                <ul className={boxClassSubMenu.join(" ")}>
+                <ul className={boxClassSubMenu2.join(" ")}>
                   <li>
                     <NavLink
                       className="menu-item-underline"
@@ -149,7 +171,7 @@ const NavbarMenu = () => {
                       activeclassname="is-active"
                       to={`/players`}
                     >
-                      Jucatori
+                      Echipa
                     </NavLink>
                   </li>
                   <li>

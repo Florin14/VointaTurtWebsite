@@ -1,14 +1,14 @@
-import "./CurrentSeasonPage.scss";
+import "./2022-2023-SeasonPage.scss";
 import React, { useState } from "react";
 import {
   matches2022_2023,
   results2022_2023,
   seasonPageCategory,
   teams,
-} from "../../data/data";
+} from "../../../data/data";
 import { styled, Tabs, Tab, css } from "@mui/material";
-import Title from "../../reusable/Title/Title";
-import { SeasonCard } from "../../reusable/Card/SeasonCard";
+import Title from "../../../reusable/Title/Title";
+import { SeasonCard } from "../../../reusable/Card/SeasonCard";
 
 const Ranking = () => {
   return (
@@ -66,7 +66,7 @@ const Ranking = () => {
   );
 };
 
-const CurrentSeasonPage = () => {
+const Season2022_2023Page = () => {
   const [selectedCategory, setSelectedCategory] = useState(
     seasonPageCategory.CLASAMENT
   );
@@ -161,4 +161,4 @@ const Cards = styled("div")`
   margin-bottom: 20px;
 `;
 
-export default CurrentSeasonPage;
+export default Season2022_2023Page;

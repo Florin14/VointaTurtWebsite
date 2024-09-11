@@ -1,0 +1,19 @@
+.history-page {
+    display: flex;
+    // flex-direction: column;
+    justify-content: center;
+    // height: 100vh;
+    width: 100%;     
+    .top {
+        display: flex;
+        // height: 100rem;
+        
+    }
+
+    .bottom {
+        display: flex;
+        // height: 100rem;
+        // align-self: center;
+    }
+}
+

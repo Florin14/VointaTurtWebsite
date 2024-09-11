@@ -1,11 +1,96 @@
-import React from 'react'
+import { ImageList, ImageListItem } from "@mui/material";
+import "./GalleryPage.scss";
+import React, { useEffect, useRef } from "react";
+import Title from "../../reusable/Title/Title";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { landingPageGallery } from "../../data/data";
+import LaunchIcon from "@mui/icons-material/Launch";
 
 const GalleryPage = () => {
-  return (
-    <div>
-      <span>Gallery</span>
-      </div>
-  )
-}
+  const ref = useRef();
+  const inView = useInView(ref);
+  const getCols = () => {
+    if (window.innerWidth <= 600) {
+      return 1;
+    } else if (window.innerWidth <= 1100) {
+      return 2;
+    } else {
+      return 3;
+    }
+  };
 
-export default GalleryPage
+  const primaryAnimation = useAnimation();
+  useEffect(() => {
+    if (inView) {
+      
+      primaryAnimation.start({
+        x: 0,
+        transition: {
+          type: "spring",
+          duration: 1.5,
+          bounce: 0.3,
+        },
+      });
+    }
+    if (!inView) {
+      primaryAnimation.start({
+        y: "-3vw",
+      });
+     
+    }
+  });
+  return (
+    <div className="gallery-section">
+      <div className="current-season-page-title">
+        <Title
+          title="Galerie foto"
+          color="#fff"
+          width="fit-content"
+          fontSize="4rem"
+        />
+      </div>
+      {/* <div
+      className="gallery-title-section"
+      // animate={secondaryAnimation}
+    > */}
+
+      {/* </div> */}
+      <motion.div className="images-section" animate={primaryAnimation}>
+        <ImageList variant="masonry" cols={getCols()} gap={8}>
+          {landingPageGallery.map((item) => (
+            <div key={item.id} className="overflow-image-section">
+              <ImageListItem>
+                <img
+                  src={`${item.img}?w=248&fit=crop&auto=format`}
+                  srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                  alt={item.title}
+                  loading="lazy"
+                  className="gallery-image"
+                />
+                <div
+                  className="gallery-launch-icon"
+                  // onClick={() => {
+                  //   getImg(item);
+                  // }}
+                >
+                  <LaunchIcon />
+                </div>
+              </ImageListItem>
+            </div>
+          ))}
+        </ImageList>
+      </motion.div>
+      {/* <div
+        className={
+          model ? "fullscreen-image-gallery open" : "fullscreen-image-gallery"
+        }
+      >
+        <img className="fullscreen-image" src={tempImgSrc.img} />
+        <div className="fullscreen-image-content">{tempImgSrc.content}</div>
+        <CloseIcon onClick={() => setModel(false)} />
+      </div> */}
+    </div>
+  );
+};
+
+export default GalleryPage;

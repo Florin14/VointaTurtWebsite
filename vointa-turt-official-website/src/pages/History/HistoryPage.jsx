@@ -1,12 +1,12 @@
 import { ImageList, ImageListItem } from "@mui/material";
-import "./NewsPage.scss";
+import "./HistoryPage.scss";
 import React, { useEffect, useRef } from "react";
 import Title from "../../reusable/Title/Title";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { landingPageGallery } from "../../data/data";
 import LaunchIcon from "@mui/icons-material/Launch";
 
-const NewsPage = () => {
+const HistoryPage = () => {
   const ref = useRef();
   const inView = useInView(ref);
   const getCols = () => {
@@ -43,7 +43,7 @@ const NewsPage = () => {
     <div className="gallery-section">
       <div className="current-season-page-title">
         <Title
-          title="Stiri"
+          title="Istorie"
           color="#fff"
           width="fit-content"
           fontSize="4rem"
@@ -85,4 +85,4 @@ const NewsPage = () => {
   );
 };
 
-export default NewsPage;
+export default HistoryPage;
