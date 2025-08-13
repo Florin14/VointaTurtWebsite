@@ -1,4 +1,4 @@
-@import "../../assets/scss/variables.scss";
+@use "../../assets/scss/variables.scss" as *;
 
 .players-page-container {
     min-height: calc(100vh - 74px);

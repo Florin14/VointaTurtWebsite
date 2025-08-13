@@ -1,7 +1,7 @@
-@import "../../assets/scss/variables.scss";
+@use "../../assets/scss/variables.scss" as *;
+
 
 .season-card-container {
-    display: flex;
     // background-color:aqua;
     height: 70px;
     width: 80%;
